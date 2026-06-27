@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tasty Tales</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffd7a8;
+      color: #333;
+    }
+    header {
+      background-color: #ff7043;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #e64a19;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .recipe-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.2s;
+    }
+    .recipe-card:hover {
+      transform: scale(1.05);
+    }
+    .recipe-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #ff7043;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .btn:hover {
+      background-color: #e64a19;
+    }
+
+    .search-bar {
+      text-align: center;
+      margin: 20px;
+    }
+    .search-bar input {
+      padding: 10px;
+      width: 300px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: #ff7043;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Tasty Tales</h1>
+    <p>Every recipe tells a story</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="search-bar">
+    <input type="text" id="search" placeholder="Search recipes...">
+  </div>
+
+  <div class="container">
+    <div class="recipe-card">
+      <img src="pasta.png" alt="Pasta">
+      <h2>Classic Italian Pasta</h2>
+      <p>A timeless recipe with rich tomato sauce and herbs.</p>
+      <a href="pasta.html" class="btn">View Recipe</a>
+    </div>
+
+    <div class="recipe-card">
+      <img src="cake.png" alt="Chocolate Cake">
+      <h2>Chocolate Cake</h2>
+      <p>Moist and decadent cake with creamy frosting.</p>
+      <a href="cake.html" class="btn">View Recipe</a>
+    </div>
+
+    <div class="recipe-card">
+      <img src="salad.png" alt="Salad">
+      <h2>Fresh Garden Salad</h2>
+      <p>A healthy mix of greens, veggies, and dressing.</p>
+      <a href="salad.html" class="btn">View Recipe</a>
+    </div>
+
+    <div class="recipe-card">
+      <img src="chickencurry.png" alt="Chicken curry">
+      <h2>Chicken Curry</h2>
+      <p>A flavorful Indian curry with spices.</p>
+      <a href="chickencurry.html" class="btn">View Recipe</a>
+    </div>
+
+    <div class="recipe-card">
+      <img src="palakpaneer.png" alt="Palak Paneer">
+      <h2>Palak Paneer</h2>
+      <p>A creamy spinach curry with soft paneer.</p>
+      <a href="palakpaneer.html" class="btn">View Recipe</a>
+    </div>
+
+    <div class="recipe-card">
+      <img src="masaladosa.png" alt="Masala Dosa">
+      <h2>Masala Dosa</h2>
+      <p>Crispy rice crepes filled with spiced potato masala.</p>
+      <a href="masaladosa.html" class="btn">View Recipe</a>
+    </div>
+
+    <div class="recipe-card">
+      <img src="prawncurry.png" alt="Prawn Curry">
+      <h2>Prawn Curry</h2>
+      <p>A coastal favorite with rich spices</p>
+      <a href="prawncurry.html" class="btn">View Recipe</a>
+    </div>
+
+    <div class="recipe-card">
+      <img src="fishcurry.png" alt="Fish Curry">
+      <h2>Fish Curry</h2>
+      <p>Tangy and spicy curry with tender fish</p>
+      <a href="fishcurry.html" class="btn">View Recipe</a>
+    </div>
+
+    <div class="recipe-card">
+      <img src="gonguraprawns.png" alt="Gongura Prawns">
+      <h2>Gongura Prawns</h2>
+      <p>A tangy Andgra delicacy with sorrel leaves</p>
+      <a href="gonguraprawns.html" class="btn">View Recipe</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Tasty Tales | Made with Love by Himaja</p>
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById("search");
+    const recipes = document.querySelectorAll(".recipe-card");
+
+    searchInput.addEventListener("keyup", function() {
+      const query = searchInput.value.toLowerCase();
+      recipes.forEach(card => {
+        const title = card.querySelector("h2").textContent.toLowerCase();
+        card.style.display = title.includes(query) ? "block" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
